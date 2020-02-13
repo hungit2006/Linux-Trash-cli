@@ -51,6 +51,28 @@ $ trash-restore
 
 # Remove all files from the trashcan.
 
+$ trash-empty
 
+# Remove only the files that have been deleted more than <days> ago:
 
+$ trash-empty <days>
 
+# Here is a demonstration of this command:
+
+$ date
+Mon May 15 20:26:52 EAT 2017
+$ trash-list
+2017-05-12 13:51:12 /home/tecmint/new.txt
+2017-05-11 10:41:30 /home/tecmint/old.txt
+2017-04-05 20:43:54 /home/tecmint/oldest.txt
+$ trash-empty  7
+$ trash-list
+2017-05-12 13:51:12 /home/tecmint/new.txt
+2017-05-11 10:41:30 /home/tecmint/old.txt
+$ trash-empty 1
+$ trash-list
+2017-05-12 13:51:12 /home/tecmint/new.txt
+
+# Remove only files matching a pattern. Do not forget to use quotes in order to protect the pattern from shell expansion:
+
+$ trash-rm  \*.txt
