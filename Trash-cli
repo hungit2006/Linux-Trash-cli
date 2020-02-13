@@ -1,0 +1,56 @@
+# Trash-cli provides these commands:
+
+$ trash-put           #trash files and directories.
+$ trash-empty         #empty the trashcan(s).
+$ trash-list          #list trashed files.
+$ trash-restore       #restore a trashed file.
+$ trash-rm            #remove individual files from the trashcan.
+
+# How to Install Trash-cli in Linux
+
+$ sudo apt-get install python-setuptools		#Debian/Ubuntu systems
+$ sudo yum install python-setuptools			#RHEL/CentOS systems
+$ sudo easy_install trash-cli	
+
+# Else, install Trash-cli from source as shown.
+
+$ git clone https://github.com/andreafrancia/trash-cli.git
+$ cd trash-cli
+$ sudo python setup.py install
+
+# How to Use Trash-cli in Linux
+# To trash a specific file, run.
+
+$ trash-put file1
+
+# List all trashed files.
+
+$ trash-list
+
+2017-05-05 10:30:48 /home/tecmint/file1
+2017-05-10 13:40:41 /home/tecmint/file2
+2017-05-12 22:30:49 /home/tecmint/file3
+2017-05-12 22:50:48 /home/tecmint/test
+
+# Search for a file in the trashcan.
+
+$ trash-list | grep file
+
+2017-05-05 10:30:48 /home/tecmint/file1
+2017-05-10 13:40:41 /home/tecmint/file2
+2017-05-12 22:30:49 /home/tecmint/file3
+
+# Restore a trashed file.
+
+$ trash-restore
+
+0 2017-05-05 10:30:48 /home/tecmint/file1
+1 2017-05-10 13:40:41 /home/tecmint/file2
+2 2017-05-12 22:30:49 /home/tecmint/file3
+3 2017-05-12 22:50:48 /home/tecmint/test
+
+# Remove all files from the trashcan.
+
+
+
+
